@@ -1,10 +1,12 @@
 import 'package:demo_movies_app/core/extensions/extensions.dart';
+import 'package:demo_movies_app/core/routes/app_screens.dart';
 import 'package:demo_movies_app/core/theme/app_colors.dart';
 import 'package:demo_movies_app/core/utils/base_cached_network_image.dart';
 import 'package:demo_movies_app/data/models/movie_models/movie_model.dart';
 import 'package:demo_movies_app/views/home/view_model/home_view_model.dart';
 import 'package:demo_movies_app/views/home/widgets/skelton_movie_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class NewMoviesList extends ConsumerWidget {
@@ -53,6 +55,7 @@ class NewMoviesList extends ConsumerWidget {
     MovieModel movieModel,
   ) {
     return GestureDetector(
+      onTap: () => context.pushNamed(AppScreens.movieDetail.getName, extra: movieModel),
       behavior: HitTestBehavior.translucent,
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(12)),

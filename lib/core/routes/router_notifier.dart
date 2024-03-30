@@ -1,5 +1,8 @@
 import 'package:demo_movies_app/core/routes/app_screens.dart';
+import 'package:demo_movies_app/data/models/movie_models/movie_model.dart';
 import 'package:demo_movies_app/views/dashboard/dashboard_screen.dart';
+import 'package:demo_movies_app/views/home/home_screen.dart';
+import 'package:demo_movies_app/views/home/widgets/movie_detail/movie_detail_screen.dart';
 import 'package:demo_movies_app/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -38,6 +41,22 @@ class RouterNotifier extends AutoDisposeNotifier<bool> implements Listenable {
     path: AppScreens.dashboard.path,
     name: AppScreens.dashboard.getName,
     builder: (context, GoRouterState state) => const DashboardScreen(),
+    routes: [
+      GoRoute(
+        path: AppScreens.home.getName,
+        name: AppScreens.home.getName,
+        builder: (context, GoRouterState state) => const HomeScreen(),
+        routes: <GoRoute>[
+          GoRoute(
+            path: AppScreens.movieDetail.getName,
+            name: AppScreens.movieDetail.getName,
+            builder: (context, GoRouterState state) => MovieDetailScreen(
+              movieModel: state.extra as MovieModel,
+            ),
+          ),
+        ],
+      ),
+    ],
   );
 
   /// Adds [GoRouter]'s listener as specified by its [Listenable].

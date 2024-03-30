@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:demo_movies_app/core/routes/routes.dart';
 import 'package:demo_movies_app/core/utils/base_cached_network_image.dart';
 import 'package:demo_movies_app/views/home/view_model/home_view_model.dart';
 import 'package:demo_movies_app/views/home/widgets/skelton_movie_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MoviesComingSoonList extends ConsumerWidget {
@@ -21,6 +23,7 @@ class MoviesComingSoonList extends ConsumerWidget {
         itemCount: moviesReversed.length,
         itemBuilder: (_, index, realIndex) {
           return GestureDetector(
+            onTap: () => context.pushNamed(AppScreens.movieDetail.getName, extra: moviesReversed[index]),
             behavior: HitTestBehavior.translucent,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * (4 / 5),
