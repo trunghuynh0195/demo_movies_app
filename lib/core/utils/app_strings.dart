@@ -6,4 +6,8 @@ class AppStrings {
   static const String ok = 'Ok';
   static const String cancel = 'Cancel';
   static const String movies = 'Movies';
+  static const String upcomingMovies = 'Upcoming Movies';
+  static const String newMovies = 'New Movies';
+  static const String whatToWatch = 'What to Watch!';
+  static const String seeAll = 'See All';
 }
