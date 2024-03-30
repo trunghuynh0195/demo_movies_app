@@ -1,8 +1,10 @@
 import 'package:demo_movies_app/core/extensions/extensions.dart';
+import 'package:demo_movies_app/core/routes/routes.dart';
 import 'package:demo_movies_app/core/utils/app_strings.dart';
 import 'package:demo_movies_app/core/utils/base_circle_avatar.dart';
 import 'package:demo_movies_app/data/storage/storage.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
   const HomeHeaderWidget({Key? key}) : super(key: key);
@@ -30,6 +32,7 @@ class HomeHeaderWidget extends StatelessWidget {
           ),
           const SizedBox(width: 12),
           GestureDetector(
+            onTap: () => context.pushNamed(AppScreens.profile.getName),
             child: BaseCircleAvatar(
               imageUrl: Storage.user?.avatar ?? '',
               name: Storage.user?.name ?? '',

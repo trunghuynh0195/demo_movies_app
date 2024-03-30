@@ -103,7 +103,7 @@ class NewMoviesList extends ConsumerWidget {
                         const Icon(Icons.star, color: Colors.yellow, size: 20),
                         const SizedBox(width: 8),
                         Text(
-                          movieModel.averageRating.toString(),
+                          movieModel.totalAverageRating.toStringAsFixed(1),
                           style: context.textTheme.bodySmall?.copyWith(
                             fontSize: 10,
                             color: Colors.white.withOpacity(0.5),

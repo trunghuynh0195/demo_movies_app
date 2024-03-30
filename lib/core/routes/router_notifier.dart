@@ -5,6 +5,7 @@ import 'package:demo_movies_app/views/auth/register/register_screen.dart';
 import 'package:demo_movies_app/views/dashboard/dashboard_screen.dart';
 import 'package:demo_movies_app/views/home/home_screen.dart';
 import 'package:demo_movies_app/views/home/widgets/movie_detail/movie_detail_screen.dart';
+import 'package:demo_movies_app/views/profile/profile_screen.dart';
 import 'package:demo_movies_app/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -71,6 +72,11 @@ class RouterNotifier extends AutoDisposeNotifier<bool> implements Listenable {
             ),
           ),
         ],
+      ),
+      GoRoute(
+        path: AppScreens.profile.getName,
+        name: AppScreens.profile.getName,
+        builder: (context, GoRouterState state) => const ProfileScreen(),
       ),
     ],
   );

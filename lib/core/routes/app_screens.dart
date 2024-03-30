@@ -5,6 +5,7 @@ enum AppScreens {
   movieDetail,
   login,
   signUp,
+  profile,
 }
 
 extension AppScreenExtension on AppScreens {
@@ -22,6 +23,8 @@ extension AppScreenExtension on AppScreens {
         return 'login';
       case AppScreens.signUp:
         return 'sign-up';
+      case AppScreens.profile:
+        return 'profile';
       default:
         return 'Unknown';
     }
