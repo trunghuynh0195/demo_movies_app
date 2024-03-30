@@ -1,6 +1,7 @@
 import 'package:demo_movies_app/core/theme/app_colors.dart';
 import 'package:demo_movies_app/core/widgets/favorite_movie_widget.dart';
 import 'package:demo_movies_app/data/models/movie_models/movie_model.dart';
+import 'package:demo_movies_app/views/favorite_movies/view_model/favorite_movies_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -10,6 +11,7 @@ class MoviesDetailButtons extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var favoriteMoviesVM = ref.read(favoriteMoviesViewModel.notifier);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -21,7 +23,7 @@ class MoviesDetailButtons extends ConsumerWidget {
             icon: Icons.favorite_border_rounded,
             child: FavoriteMovieWidget(
               movieId: movieModel.id ?? '',
-              onChanged: (isFavorite) {},
+              onChanged: (isFavorite) => favoriteMoviesVM.onFavoriteMovie(isFavorite, movieModel),
             ),
           ),
           const SizedBox(width: 20),

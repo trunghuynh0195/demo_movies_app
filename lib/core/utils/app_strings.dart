@@ -34,4 +34,6 @@ class AppStrings {
   static const String alreadyHaveAnAccount = 'Already have an account?';
   static const String login = 'Log in';
   static const String passwordConfirmDoesNotMatch = 'The password confirm does not match.';
+  static const String favorites = 'Favorites';
+  static const String noFavoriteMovies = 'No favorite movies!';
 }

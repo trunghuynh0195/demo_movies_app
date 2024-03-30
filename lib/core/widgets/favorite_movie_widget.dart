@@ -1,3 +1,4 @@
+import 'package:demo_movies_app/data/storage/pref.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteMovieWidget extends StatefulWidget {
@@ -24,6 +25,7 @@ class _FavoriteMovieWidgetState extends State<FavoriteMovieWidget> {
   @override
   void initState() {
     super.initState();
+    isFavorite = Storage.favoriteMovies.any((item) => item == widget.movieId);
   }
 
   @override
@@ -39,7 +41,17 @@ class _FavoriteMovieWidgetState extends State<FavoriteMovieWidget> {
   }
 
   void _favoriteMovie() {
+    List<String> movies = Storage.favoriteMovies;
+
     isFavorite = !isFavorite;
+
+    if (isFavorite) {
+      movies.add(widget.movieId);
+    } else {
+      movies.remove(widget.movieId);
+    }
+
+    Storage.favoriteMovies = movies.toSet().toList();
     widget.onChanged?.call(isFavorite);
     setState(() {});
   }
