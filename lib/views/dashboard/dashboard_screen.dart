@@ -1,5 +1,7 @@
 import 'package:demo_movies_app/views/dashboard/view_model/dashboard_view_model.dart';
 import 'package:demo_movies_app/views/dashboard/widgets/dashboard_bottom_bar.dart';
+import 'package:demo_movies_app/views/favorite_movies/favorite_movies_screen.dart';
+import 'package:demo_movies_app/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -25,9 +27,9 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with Automati
                 controller: dashboardVM.dashboardPageController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
+                  const HomeScreen(),
                   Container(),
-                  Container(),
-                  Container(),
+                  const FavoriteMoviesScreen(),
                   Container(),
                 ],
               ),

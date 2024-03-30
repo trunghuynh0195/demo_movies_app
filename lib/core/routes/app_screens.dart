@@ -1,6 +1,11 @@
 enum AppScreens {
   splash,
   dashboard,
+  home,
+  movieDetail,
+  login,
+  signUp,
+  profile,
 }
 
 extension AppScreenExtension on AppScreens {
@@ -10,6 +15,16 @@ extension AppScreenExtension on AppScreens {
         return 'splash';
       case AppScreens.dashboard:
         return 'dashboard';
+      case AppScreens.home:
+        return 'home';
+      case AppScreens.movieDetail:
+        return 'movie-detail';
+      case AppScreens.login:
+        return 'login';
+      case AppScreens.signUp:
+        return 'sign-up';
+      case AppScreens.profile:
+        return 'profile';
       default:
         return 'Unknown';
     }

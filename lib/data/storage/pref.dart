@@ -19,4 +19,8 @@ class Storage {
   static String? get userJson => p.getString(StorageKey.userInfo);
   static User? get user => (userJson ?? '').isEmpty ? null : User.fromJson(jsonDecode(userJson!));
   static set user(User? value) => value == null ? p.remove(StorageKey.userInfo) : p.setString(StorageKey.userInfo, jsonEncode(value));
+
+  // ----
+  static List<String> get favoriteMovies => p.getStringList(StorageKey.favoriteMoviesKey) ?? [];
+  static set favoriteMovies(List<String> value) => p.setStringList(StorageKey.favoriteMoviesKey, value);
 }
