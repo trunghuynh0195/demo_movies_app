@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1043597513308",
+    "project_id": "fir-app-1306d",
+    "storage_bucket": "fir-app-1306d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043597513308:android:a3c86d09ecc576b86c0c99",
+        "android_client_info": {
+          "package_name": "com.example.demo_movies_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfgsSGqHsyz38Xi2hM2-neuSEBP30XxAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
