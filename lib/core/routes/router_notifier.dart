@@ -1,6 +1,7 @@
 import 'package:demo_movies_app/core/routes/app_screens.dart';
 import 'package:demo_movies_app/data/models/movie_models/movie_model.dart';
 import 'package:demo_movies_app/views/auth/login/login_screen.dart';
+import 'package:demo_movies_app/views/auth/register/register_screen.dart';
 import 'package:demo_movies_app/views/dashboard/dashboard_screen.dart';
 import 'package:demo_movies_app/views/home/home_screen.dart';
 import 'package:demo_movies_app/views/home/widgets/movie_detail/movie_detail_screen.dart';
@@ -44,6 +45,11 @@ class RouterNotifier extends AutoDisposeNotifier<bool> implements Listenable {
       path: AppScreens.login.path,
       name: AppScreens.login.getName,
       builder: (context, GoRouterState state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: AppScreens.signUp.path,
+      name: AppScreens.signUp.getName,
+      builder: (context, GoRouterState state) => const RegisterScreen(),
     ),
   ];
 

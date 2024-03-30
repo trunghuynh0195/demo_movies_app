@@ -20,4 +20,18 @@ class AppStrings {
   static const String signUp = 'Sign Up';
   static const String dontHaveAccount = "Don't have account?";
   static const String btnContinue = 'Continue';
+  static const String yourName = 'Your name';
+  static const String yourPhone = 'Your phone';
+  static const String gender = 'Gender';
+  static const String yourBirthday = 'Your birthday';
+  static const String update = 'Update';
+  static const String successfullyUpdated = 'successfully updated!';
+  static const String signUpSuccess = 'sign up success!';
+  static const String name = 'Name';
+  static const String phone = 'Phone';
+  static const String confirmPassword = 'Confirm Password';
+  static const String birthday = 'Birthday';
+  static const String alreadyHaveAnAccount = 'Already have an account?';
+  static const String login = 'Log in';
+  static const String passwordConfirmDoesNotMatch = 'The password confirm does not match.';
 }

@@ -117,7 +117,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       TextSpan(
                         text: ' ${AppStrings.signUp}',
                         style: context.textTheme.labelLarge?.copyWith(color: AppColors.primary),
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()..onTap = () => context.pushNamed(AppScreens.signUp.getName),
                       ),
                     ],
                   ),
