@@ -3,6 +3,7 @@ enum AppScreens {
   dashboard,
   home,
   movieDetail,
+  login,
 }
 
 extension AppScreenExtension on AppScreens {
@@ -16,6 +17,8 @@ extension AppScreenExtension on AppScreens {
         return 'home';
       case AppScreens.movieDetail:
         return 'movie-detail';
+      case AppScreens.login:
+        return 'login';
       default:
         return 'Unknown';
     }

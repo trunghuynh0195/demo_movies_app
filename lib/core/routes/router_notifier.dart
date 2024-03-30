@@ -1,5 +1,6 @@
 import 'package:demo_movies_app/core/routes/app_screens.dart';
 import 'package:demo_movies_app/data/models/movie_models/movie_model.dart';
+import 'package:demo_movies_app/views/auth/login/login_screen.dart';
 import 'package:demo_movies_app/views/dashboard/dashboard_screen.dart';
 import 'package:demo_movies_app/views/home/home_screen.dart';
 import 'package:demo_movies_app/views/home/widgets/movie_detail/movie_detail_screen.dart';
@@ -28,6 +29,7 @@ class RouterNotifier extends AutoDisposeNotifier<bool> implements Listenable {
   /// Our application routes. Obtained through code generation
   List<GoRoute> get routes => [
         _splashRouter,
+        ..._authRouter,
         _mainRouter,
       ];
 
@@ -36,6 +38,14 @@ class RouterNotifier extends AutoDisposeNotifier<bool> implements Listenable {
     name: AppScreens.splash.getName,
     builder: (context, GoRouterState state) => const SplashScreen(),
   );
+
+  final _authRouter = [
+    GoRoute(
+      path: AppScreens.login.path,
+      name: AppScreens.login.getName,
+      builder: (context, GoRouterState state) => const LoginScreen(),
+    ),
+  ];
 
   final _mainRouter = GoRoute(
     path: AppScreens.dashboard.path,

@@ -2,6 +2,7 @@ import 'package:demo_movies_app/core/extensions/extensions.dart';
 import 'package:demo_movies_app/core/routes/app_screens.dart';
 import 'package:demo_movies_app/core/utils/app_image_paths.dart';
 import 'package:demo_movies_app/core/utils/app_strings.dart';
+import 'package:demo_movies_app/data/storage/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -46,6 +47,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _init() async {
     await Future.delayed(const Duration(seconds: 3));
-    if (mounted) context.goNamed(AppScreens.dashboard.getName);
+    _checkLoggedIn();
+  }
+
+  void _checkLoggedIn() {
+    if (Storage.user != null) return context.goNamed(AppScreens.dashboard.getName);
+    context.goNamed(AppScreens.login.getName);
   }
 }
